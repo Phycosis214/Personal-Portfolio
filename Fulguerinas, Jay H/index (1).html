@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 101 · Joshua Wayman A. Arabejo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ DECORATIVE BACKGROUND BLOBS ============ -->
+<div class="bg-blobs" aria-hidden="true">
+  <span class="blob blob--a"></span>
+  <span class="blob blob--b"></span>
+  <span class="blob blob--c"></span>
+</div>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="topbar__brand">
+    <span class="css-badge" aria-hidden="true">
+      <svg viewBox="0 0 100 120" width="26" height="30"><path d="M10 8 L90 8 L82 100 L50 112 L18 100 Z" fill="url(#g1)"/><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ecae6"/><stop offset="1" stop-color="#ffafcc"/></linearGradient></defs></svg>
+    </span>
+    CSS<span class="accent">101</span>
+  </div>
+  <p class="topbar__course">CP 308 — Web System &amp; Technologies</p>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="hero">
+  <div class="hero__avatar-wrap">
+    <img src="images/GRADHAT.png" alt="Joshua Wayman A. Arabejo" class="hero__avatar" onerror="this.style.display='none'">
+    <span class="hero__status"><i class="dot"></i> Available</span>
+  </div>
+
+  <p class="eyebrow">Portfolio Lesson — 2026</p>
+  <h1 class="hero__title">Cascading<br>Style<br><span class="accent">Sheet</span></h1>
+  <p class="hero__subtitle">A soft, glassy walkthrough of CSS — syntax, selectors, colors, fonts,
+    and everything else that makes the web look pretty. Made with love by
+    <strong>Joshua Wayman A. Arabejo</strong>.</p>
+
+  <div class="pill-row">
+    <span class="pill">🎀 Selectors</span>
+    <span class="pill">🩵 Colors &amp; Fonts</span>
+    <span class="pill">✨ Borders &amp; Text FX</span>
+  </div>
+
+  <a href="#lessons" class="scroll-cue">
+    <span>scroll</span>
+    <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 16 3 7l1.4-1.4L12 13.2l7.6-7.6L21 7z" fill="currentColor"/></svg>
+  </a>
+</section>
+
+<main>
+
+<!-- ============ WHAT IS CSS ============ -->
+<section id="lessons" class="section">
+  <span class="section__eyebrow">01 · The basics</span>
+  <h2 class="glass-title">Cascading Style Sheet (CSS)</h2>
+  <div class="glass-card">
+    <p class="lead">CSS is the language we use to style a Web page.</p>
+    <ul class="check-list">
+      <li>CSS stands for <b>C</b>ascading <b>S</b>tyle <b>S</b>heets.</li>
+      <li>CSS describes how HTML elements are to be displayed on screen, paper, or in other media.</li>
+      <li>CSS saves a lot of work — it can control the layout of multiple web pages all at once.</li>
+      <li>External stylesheets are stored in CSS files.</li>
+      <li>CSS defines the design, layout, and variations in display for different devices and screen sizes.</li>
+      <li>CSS definitions are normally saved in an external <code>.css</code> file.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SYNTAX ============ -->
+<section id="syntax" class="section">
+  <span class="section__eyebrow">02 · Syntax</span>
+  <h2 class="glass-title">CSS Syntax</h2>
+  <div class="glass-card two-col">
+    <div>
+      <p>A CSS rule consists of a <b>selector</b> and a <b>declaration block</b>:</p>
+      <ul class="check-list">
+        <li>The <b>selector</b> points to the HTML element you want to style.</li>
+        <li>The declaration block holds one or more declarations, separated by semicolons.</li>
+        <li>Each declaration has a property name and a value, separated by a colon.</li>
+        <li>Multiple declarations are separated with semicolons; the block is wrapped in curly braces.</li>
+      </ul>
+    </div>
+    <div class="code-block">
+<pre><span class="cd-sel">p</span> {
+  <span class="cd-prop">color</span>: <span class="cd-val">red</span>;
+  <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>;
+}</pre>
+      <div class="code-legend">
+        <span><i class="dot dot--sel"></i>selector</span>
+        <span><i class="dot dot--prop"></i>property</span>
+        <span><i class="dot dot--val"></i>value</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELECTORS LAB ============ -->
+<section id="selectors" class="section">
+  <span class="section__eyebrow">03 · Selectors Lab</span>
+  <h2 class="glass-title">CSS Selectors</h2>
+  <p class="lead centered">Selectors are used to “find” the HTML elements you want to style — there are five categories. Tap a tab 🎀</p>
+
+  <div class="lab glass-card">
+    <input type="radio" name="selTabs" id="tab-simple" class="lab__radio" checked>
+    <input type="radio" name="selTabs" id="tab-combo" class="lab__radio">
+    <input type="radio" name="selTabs" id="tab-pseudoclass" class="lab__radio">
+    <input type="radio" name="selTabs" id="tab-pseudoel" class="lab__radio">
+    <input type="radio" name="selTabs" id="tab-attr" class="lab__radio">
+
+    <div class="lab__tabs">
+      <label for="tab-simple">Simple</label>
+      <label for="tab-combo">Combinators</label>
+      <label for="tab-pseudoclass">Pseudo-classes</label>
+      <label for="tab-pseudoel">Pseudo-elements</label>
+      <label for="tab-attr">Attributes</label>
+    </div>
+
+    <div class="lab__panel lab__panel--simple">
+      <div class="two-col">
+        <div class="code-block"><pre><span class="cd-sel">p</span> {
+  <span class="cd-prop">color</span>: <span class="cd-val">red</span>;
+  <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>;
+}</pre></div>
+        <ul class="check-list">
+          <li><b>element</b> selector — selects HTML elements by tag name.</li>
+          <li><b>#id</b> selector — selects one unique element using its <code>id</code>, written with a hash (#).</li>
+          <li><b>.class</b> selector — selects elements with a specific <code>class</code>, written with a period (.).</li>
+        </ul>
+      </div>
+      <div class="code-block"><pre><span class="cd-sel">#para1</span> {
+  <span class="cd-prop">color</span>: <span class="cd-val">red</span>;
+  <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>;
+}
+
+<span class="cd-sel">.center</span> {
+  <span class="cd-prop">color</span>: <span class="cd-val">red</span>;
+  <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>;
+}
+
+<span class="cd-sel">p.center</span> {
+  <span class="cd-prop">color</span>: <span class="cd-val">red</span>;
+  <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>;
+}</pre></div>
+    </div>
+
+    <div class="lab__panel lab__panel--combo">
+      <p>A combinator defines the relationship between two or more selectors. There are four kinds:</p>
+      <div class="combo-grid">
+        <div class="combo-card"><h4>Descendant <code>div p</code></h4><p>Selects all elements that are descendants (children, grandchildren…) of a specified element.</p></div>
+        <div class="combo-card"><h4>Child <code>div &gt; p</code></h4><p>Selects all elements that are <em>direct</em> children of a specified element.</p></div>
+        <div class="combo-card"><h4>Next sibling <code>div + p</code></h4><p>Selects the element directly after a specific element (same parent).</p></div>
+        <div class="combo-card"><h4>Subsequent sibling <code>div ~ p</code></h4><p>Selects all elements that are next siblings of a specified element.</p></div>
+      </div>
+    </div>
+
+    <div class="lab__panel lab__panel--pseudoclass">
+      <p>Pseudo-classes style an element in a <b>special state</b>, written with a single colon <code>:</code></p>
+      <div class="hover-row">
+        <button class="try-btn try-btn--hover">Hover me :hover</button>
+        <button class="try-btn try-btn--active">Press me :active</button>
+        <button class="try-btn try-btn--focus">Click me :focus</button>
+        <a href="#selectors" class="try-link">I'm a :link</a>
+      </div>
+      <ul class="check-list">
+        <li>Style visited and unvisited links differently</li>
+        <li>Style an element when it gets focus</li>
+        <li>Style valid / invalid / required / optional form elements</li>
+        <li>Style an element that is the first child of its parent</li>
+      </ul>
+    </div>
+
+    <div class="lab__panel lab__panel--pseudoel">
+      <p>Pseudo-elements style a <b>specific part</b> of an element, written with a double colon <code>::</code></p>
+      <ul class="check-list">
+        <li>Style the first letter or first line of an element</li>
+        <li>Insert content before or after an element</li>
+        <li>Style the markers of list items</li>
+        <li>Style the user-selected portion of an element</li>
+        <li>Style the viewbox behind a dialog box</li>
+      </ul>
+      <div class="code-block"><pre><span class="cd-sel">selector::pseudo-element-name</span> {
+  <span class="cd-val">CSS properties</span>
+}</pre></div>
+    </div>
+
+    <div class="lab__panel lab__panel--attr">
+      <p>Attribute selectors style elements based on an attribute or attribute value, wrapped in <b>square brackets [ ]</b>.</p>
+      <ul class="check-list mono-list">
+        <li><code>[attribute]</code> — has the specified attribute</li>
+        <li><code>[attribute="value"]</code> — exact value match</li>
+        <li><code>[attribute~="value"]</code> — value contains a specific word</li>
+        <li><code>[attribute|="value"]</code> — value is exact, or starts with value + hyphen</li>
+        <li><code>[attribute^="value"]</code> — value starts with</li>
+        <li><code>[attribute$="value"]</code> — value ends with</li>
+        <li><code>[attribute*="value"]</code> — value contains</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GROUPING ============ -->
+<section id="grouping" class="section">
+  <span class="section__eyebrow">04 · Tidy up</span>
+  <h2 class="glass-title">CSS Grouping Selector</h2>
+  <div class="glass-card two-col">
+    <div class="code-block"><pre><span class="cd-sel">h1</span> { <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>; <span class="cd-prop">color</span>: <span class="cd-val">red</span>; }
+<span class="cd-sel">h2</span> { <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>; <span class="cd-prop">color</span>: <span class="cd-val">red</span>; }
+<span class="cd-sel">p</span>  { <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>; <span class="cd-prop">color</span>: <span class="cd-val">red</span>; }</pre></div>
+    <div class="code-block"><pre><span class="cd-sel">h1, h2, p</span> {
+  <span class="cd-prop">text-align</span>: <span class="cd-val">center</span>;
+  <span class="cd-prop">color</span>: <span class="cd-val">red</span>;
+}</pre>
+    <p class="hint">The grouping selector selects every HTML element that shares the same style. To group selectors, separate each one with a comma — it keeps your code short and sweet. 💛</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO ADD CSS ============ -->
+<section id="addcss" class="section">
+  <span class="section__eyebrow">05 · Getting styles onto the page</span>
+  <h2 class="glass-title">How to Add CSS</h2>
+  <p class="lead centered">There are three ways of inserting a style sheet.</p>
+
+  <div class="lab glass-card">
+    <input type="radio" name="addTabs" id="tab-ext" class="lab__radio" checked>
+    <input type="radio" name="addTabs" id="tab-int" class="lab__radio">
+    <input type="radio" name="addTabs" id="tab-inl" class="lab__radio">
+
+    <div class="lab__tabs lab__tabs--3">
+      <label for="tab-ext">External CSS</label>
+      <label for="tab-int">Internal CSS</label>
+      <label for="tab-inl">Inline CSS</label>
+    </div>
+
+    <div class="lab__panel lab__panel--ext">
+      <p>Link to an external <code>.css</code> file — change the look of an entire site by editing just one file, using a <code>&lt;link&gt;</code> in the head.</p>
+      <div class="code-block"><pre>&lt;head&gt;
+  &lt;link <span class="cd-prop">rel</span>=<span class="cd-val">"stylesheet"</span> <span class="cd-prop">href</span>=<span class="cd-val">"mystyle.css"</span>&gt;
+&lt;/head&gt;</pre></div>
+    </div>
+    <div class="lab__panel lab__panel--int">
+      <p>Use the <code>&lt;style&gt;</code> element inside the head section — handy for one page with a unique style.</p>
+      <div class="code-block"><pre>&lt;style&gt;
+  <span class="cd-sel">body</span> { <span class="cd-prop">background-color</span>: <span class="cd-val">linen</span>; }
+  <span class="cd-sel">h1</span> { <span class="cd-prop">color</span>: <span class="cd-val">maroon</span>; <span class="cd-prop">margin-left</span>: <span class="cd-val">40px</span>; }
+&lt;/style&gt;</pre></div>
+    </div>
+    <div class="lab__panel lab__panel--inl">
+      <p>Add a <code>style</code> attribute directly on an element — great for one-off, unique styling.</p>
+      <div class="code-block"><pre>&lt;h1 <span class="cd-prop">style</span>=<span class="cd-val">"color:blue;text-align:center;"</span>&gt;Hello&lt;/h1&gt;
+&lt;p <span class="cd-prop">style</span>=<span class="cd-val">"color:red;"</span>&gt;This is a paragraph.&lt;/p&gt;</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLORS ============ -->
+<section id="colors" class="section">
+  <span class="section__eyebrow">06 · Colors</span>
+  <h2 class="glass-title">CSS Colors</h2>
+  <div class="glass-card">
+    <p>Colors are specified with a <b>predefined color name</b>, or with <b>RGB</b>, <b>HEX</b>, <b>HSL</b>, <b>RGBA</b>, or <b>HSLA</b> values. CSS/HTML support 140 standard color names.</p>
+    <div class="swatch-row">
+      <div class="swatch" style="background:rgb(142,202,230)"><span>rgb(142,202,230)</span></div>
+      <div class="swatch" style="background:#FFAFCC"><span>#FFAFCC</span></div>
+      <div class="swatch" style="background:hsl(283,39%,80%)"><span>hsl(283°,39%,80%)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BACKGROUNDS & BORDERS ============ -->
+<section id="backgrounds" class="section">
+  <span class="section__eyebrow">07 · Backgrounds &amp; Borders</span>
+  <h2 class="glass-title">Backgrounds &amp; Borders</h2>
+
+  <div class="glass-card">
+    <p class="lead">The CSS background properties add background effects for elements:</p>
+    <div class="chip-row">
+      <span class="chip">background-color</span>
+      <span class="chip">background-image</span>
+      <span class="chip">background-repeat</span>
+      <span class="chip">background-attachment</span>
+      <span class="chip">background-position</span>
+      <span class="chip">background (shorthand)</span>
+    </div>
+  </div>
+
+  <div class="glass-card">
+    <p class="lead">The <code>border-style</code> property — try them all:</p>
+    <div class="border-grid">
+      <div class="bx" style="border-style:dotted">dotted</div>
+      <div class="bx" style="border-style:dashed">dashed</div>
+      <div class="bx" style="border-style:solid">solid</div>
+      <div class="bx" style="border-style:double">double</div>
+      <div class="bx" style="border-style:groove">groove</div>
+      <div class="bx" style="border-style:ridge">ridge</div>
+      <div class="bx" style="border-style:inset">inset</div>
+      <div class="bx" style="border-style:outset">outset</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEXT FORMATTING ============ -->
+<section id="text" class="section">
+  <span class="section__eyebrow">08 · Text formatting</span>
+  <h2 class="glass-title">CSS Text Formatting</h2>
+
+  <div class="text-grid">
+    <div class="glass-card">
+      <h4>Color &amp; Background</h4>
+      <p style="background:#0b1d3a;color:#fff;padding:.6rem 1rem;border-radius:12px">midnightblue on lightgrey</p>
+    </div>
+    <div class="glass-card">
+      <h4>Alignment</h4>
+      <p style="text-align:justify">Stretches the lines so that each line has equal width, justify aligns text neatly on both edges just like this little paragraph.</p>
+    </div>
+    <div class="glass-card">
+      <h4>Decoration</h4>
+      <p><span style="text-decoration:underline">underline</span> · <span style="text-decoration:overline">overline</span> · <span style="text-decoration:line-through">line-through</span></p>
+    </div>
+    <div class="glass-card">
+      <h4>Transformation</h4>
+      <p style="text-transform:uppercase">uppercase text</p>
+      <p style="text-transform:capitalize">capitalize each word</p>
+    </div>
+    <div class="glass-card">
+      <h4>Spacing</h4>
+      <p style="letter-spacing:3px">l e t t e r</p>
+      <p style="text-indent:24px">text-indent pushes the first line in.</p>
+    </div>
+    <div class="glass-card">
+      <h4>Shadow</h4>
+      <p class="shadow-demo">text-shadow</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FONTS ============ -->
+<section id="fonts" class="section">
+  <span class="section__eyebrow">09 · Fonts</span>
+  <h2 class="glass-title">CSS Fonts</h2>
+  <div class="glass-card">
+    <p>Choosing the right font shapes how readers experience a site. CSS has five generic font families:</p>
+    <div class="font-table">
+      <div class="font-row"><span>Serif</span><span style="font-family:Georgia, 'Times New Roman', serif">Times New Roman, Georgia</span></div>
+      <div class="font-row"><span>Sans-serif</span><span style="font-family:Arial, Helvetica, sans-serif">Arial, Verdana, Helvetica</span></div>
+      <div class="font-row"><span>Monospace</span><span style="font-family:'Courier New', monospace">Courier New, Monaco</span></div>
+      <div class="font-row"><span>Cursive</span><span style="font-family:cursive">Brush Script MT</span></div>
+      <div class="font-row"><span>Fantasy</span><span style="font-family:fantasy">Papyrus, Copperplate</span></div>
+    </div>
+    <p class="hint">Prefer a free option? Use Google Fonts — over 1000 fonts, linked straight into your <code>&lt;head&gt;</code>.</p>
+    <div class="code-block"><pre>&lt;link <span class="cd-prop">rel</span>=<span class="cd-val">"stylesheet"</span> <span class="cd-prop">href</span>=<span class="cd-val">"https://fonts.googleapis.com/css?family=Sofia"</span>&gt;
+
+<span class="cd-sel">body</span> { <span class="cd-prop">font-family</span>: <span class="cd-val">"Sofia", sans-serif</span>; }</pre></div>
+  </div>
+</section>
+
+<!-- ============ CSS RADIO — SPOTIFY-STYLE PLAYLIST ============ -->
+<section id="player" class="section">
+  <span class="section__eyebrow">10 · For your ears (sort of)</span>
+  <h2 class="glass-title">CSS Radio 🎧</h2>
+  <p class="lead centered">Every lesson above, replayed as a playlist. Tap ▷ to jump to that track.</p>
+
+  <div class="player glass-card">
+    <div class="player__now">
+      <div class="player__art">
+        <svg viewBox="0 0 100 120" width="46" height="55"><path d="M10 8 L90 8 L82 100 L50 112 L18 100 Z" fill="url(#g2)"/><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bde0fe"/><stop offset="1" stop-color="#ffc8dd"/></linearGradient></defs></svg>
+      </div>
+      <div>
+        <p class="player__track">Now Playing — Cascading Style Sheet</p>
+        <p class="player__artist">Joshua Wayman A. Arabejo · CSS 101 EP</p>
+      </div>
+    </div>
+    <div class="player__bar"><span class="player__bar-fill"></span></div>
+
+    <ul class="playlist">
+      <li><a href="#lessons"><span class="track-no">01</span> What is CSS <span class="track-time">▷</span></a></li>
+      <li><a href="#syntax"><span class="track-no">02</span> CSS Syntax <span class="track-time">▷</span></a></li>
+      <li><a href="#selectors"><span class="track-no">03</span> Selectors Lab <span class="track-time">▷</span></a></li>
+      <li><a href="#grouping"><span class="track-no">04</span> Grouping Selector <span class="track-time">▷</span></a></li>
+      <li><a href="#addcss"><span class="track-no">05</span> How to Add CSS <span class="track-time">▷</span></a></li>
+      <li><a href="#colors"><span class="track-no">06</span> Colors <span class="track-time">▷</span></a></li>
+      <li><a href="#backgrounds"><span class="track-no">07</span> Backgrounds &amp; Borders <span class="track-time">▷</span></a></li>
+      <li><a href="#text"><span class="track-no">08</span> Text Formatting <span class="track-time">▷</span></a></li>
+      <li><a href="#fonts"><span class="track-no">09</span> Fonts <span class="track-time">▷</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section section--last">
+  <span class="section__eyebrow">Thanks for scrolling</span>
+  <h2 class="glass-title">Contact</h2>
+  <div class="glass-card contact-card">
+    <p>Made with 🩵 by <strong>Joshua Wayman A. Arabejo</strong> — BSIT Student &amp; UI/UX Web Developer.</p>
+    <div class="chip-row">
+      <span class="chip">UI/UX &amp; Prototyping</span>
+      <span class="chip">Web Application Development</span>
+      <span class="chip">Custom Systems &amp; Portals</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">CP 308 — Web System and Technologies · CSS 101</footer>
+
+<!-- ============ FIXED BOTTOM PILL NAV ============ -->
+<nav class="dock">
+  <a href="#home" class="dock__item dock__item--active">Home</a>
+  <a href="#selectors" class="dock__item">Selectors</a>
+  <a href="#player" class="dock__item">Player</a>
+  <a href="#contact" class="dock__item">Contact</a>
+</nav>
+
+</body>
+</html>
